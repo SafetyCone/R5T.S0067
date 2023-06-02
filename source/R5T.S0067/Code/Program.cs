@@ -1,13 +1,17 @@
 using System;
+using System.Threading.Tasks;
 
 
 namespace R5T.S0067
 {
     class Program
     {
-        static void Main()
+        static async Task Main()
         {
-            Console.WriteLine("Hello World!");
+            //await ProjectFileGenerationScripts.Instance.Create_ConsoleProjectFile();
+            await ProjectFileGenerationScripts.Instance.Create_WebServerForBlazorClientProjectFile();
+
+            //ProjectFileScripts.Instance.Test_Is_ProjectFile();
         }
     }
 }
