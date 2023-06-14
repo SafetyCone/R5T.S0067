@@ -13,6 +13,27 @@ namespace R5T.S0067
     [FunctionalityMarker]
     public partial interface IProjectFileGenerationScripts : IFunctionalityMarker
     {
+        public async Task Create_BlazorClientProjectFile()
+        {
+            /// Inputs.
+            var projectFilePath = Instances.Paths.Sample_ProjectFilePath;
+            var projectDescription = Instances.Values.Sample_ProjectDescription;
+            var repositoryUrl = new IsSet<IRepositoryUrl>();
+
+
+            /// Run.
+            Instances.FileSystemOperator.DeleteFile_OkIfNotExists(
+                projectFilePath.Value);
+
+            await Instances.ProjectFileGenerationOperations.Create_BlazorClient(
+                projectFilePath,
+                projectDescription,
+                repositoryUrl);
+
+            Instances.NotepadPlusPlusOperator.Open(
+                projectFilePath.Value);
+        }
+
         public async Task Create_WebServerForBlazorClientProjectFile()
         {
             /// Inputs.

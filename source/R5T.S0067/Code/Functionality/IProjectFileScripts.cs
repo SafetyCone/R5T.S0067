@@ -1,7 +1,9 @@
 using System;
+using System.Threading.Tasks;
 
 using R5T.T0132;
 using R5T.T0172.Extensions;
+using R5T.T0181.Extensions;
 
 
 namespace R5T.S0067
@@ -9,6 +11,25 @@ namespace R5T.S0067
     [FunctionalityMarker]
     public partial interface IProjectFileScripts : IFunctionalityMarker
     {
+        public async Task Write_RecursiveProjectReferencesToFile()
+        {
+            /// Inputs.
+            var projectFilePath =
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0060\source\R5T.S0060.S002\R5T.S0060.S002.csproj".ToProjectFilePath()
+                ;
+            var outputTextFilePath =
+                Instances.Paths.OutputTextFilePath
+                ;
+
+
+            /// Run.
+            await Instances.ProjectFileOperations.Write_RecursiveProjectReferencesTo(
+                projectFilePath,
+                outputTextFilePath.ToTextFilePath());
+
+            Instances.NotepadPlusPlusOperator.Open(outputTextFilePath);
+        }
+
         /// <summary>
         /// Test if a file is a Visual Studio project file by examining its contents.
         /// </summary>
