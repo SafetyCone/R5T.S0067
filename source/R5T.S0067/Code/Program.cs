@@ -8,7 +8,7 @@ namespace R5T.S0067
     {
         static async Task Main()
         {
-            await ProjectFileDemonstrations.Instance.Get_RecursiveProjectReferences_InDependencyOrder();
+            //await ProjectFileDemonstrations.Instance.Get_RecursiveProjectReferences_InDependencyOrder();
             //await ProjectFileDemonstrations.Instance.Get_TopLevelProjectReferences();
             //await ProjectFileDemonstrations.Instance.Get_PackageReferences();
 
@@ -18,6 +18,10 @@ namespace R5T.S0067
 
             //ProjectFileScripts.Instance.Test_Is_ProjectFile();
             //await ProjectFileScripts.Instance.Write_RecursiveProjectReferencesToFile();
+            await ProjectFileScripts.Instance.Set_PrivateGitHubRepositoryProperty();
+            //await ProjectFileScripts.Instance.Write_ProjectFileXmlText_ToFile();
+            //await ProjectFileScripts.Instance.Write_ProjectElement_ToFile();
+            //await ProjectFileScripts.Instance.StandardizeVariances();
         }
     }
 }
