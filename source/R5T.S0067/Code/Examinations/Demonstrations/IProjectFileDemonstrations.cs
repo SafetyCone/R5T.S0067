@@ -34,7 +34,7 @@ namespace R5T.S0067
                 .Select(packageReference => $"{packageReference.Identity} - {packageReference.Version}")
                 ;
 
-            await Instances.FileOperator.WriteLines(
+            await Instances.FileOperator.Write_Lines(
                 outputTextFilePath,
                 lines);
 
@@ -62,7 +62,7 @@ namespace R5T.S0067
             var topLevelProjectReferences = await Instances.ProjectFileOperations.Get_TopLevelProjectReferences(
                 recursiveProjectFilePaths);
 
-            await Instances.FileOperator.WriteLines(
+            await Instances.FileOperator.Write_Lines(
                 outputTextFilePath,
                 topLevelProjectReferences.Get_Values().OrderAlphabetically());
 
@@ -87,7 +87,7 @@ namespace R5T.S0067
             var recursiveProjectFilePaths = await Instances.ProjectFileOperations.Get_RecursiveProjectReferences_InDependencyOrder(
                 projectFilePath);
 
-            await Instances.FileOperator.WriteLines(
+            await Instances.FileOperator.Write_Lines(
                 outputTextFilePath,
                 // Do not order alphabetically, keep dependency order.
                 recursiveProjectFilePaths.Get_Values());
