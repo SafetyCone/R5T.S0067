@@ -22,7 +22,7 @@ namespace R5T.S0067
 
 
             /// Run.
-            Instances.FileSystemOperator.DeleteFile_OkIfNotExists(
+            Instances.FileSystemOperator.Delete_File_OkIfNotExists(
                 projectFilePath.Value);
 
             await Instances.ProjectFileGenerationOperations.Create_BlazorClient(
@@ -44,7 +44,7 @@ namespace R5T.S0067
 
 
             /// Run.
-            Instances.FileSystemOperator.DeleteFile_OkIfNotExists(
+            Instances.FileSystemOperator.Delete_File_OkIfNotExists(
                 projectFilePath.Value);
 
             await Instances.ProjectFileGenerationOperations.Create_WebServerForBlazorClient(
@@ -66,7 +66,7 @@ namespace R5T.S0067
 
 
             /// Run.
-            Instances.FileSystemOperator.DeleteFile_OkIfNotExists(
+            Instances.FileSystemOperator.Delete_File_OkIfNotExists(
                 projectFilePath.Value);
 
             await Instances.ProjectFileGenerationOperations.Create_ConsoleProjectFile(
